@@ -1,0 +1,55 @@
+.body{
+	width: 98%;
+	height: 200%;
+}
+
+.nav{
+	background: url("../images/global_nav_bg.png") repeat-x scroll 0 0 transparent;
+	height: 35px;
+    width: 100%;
+    z-index: 9998;
+    position: fixed;
+	left: 0px;
+}
+
+.top{
+    top: 0px;
+}
+
+.bottom{
+	bottom: 0px;
+}
+
+.locate_div{
+	margin: 0 auto;
+	width: 800px;
+}
+
+.nav ul{
+	display: inline;
+    font-size: 14px;
+}
+
+.nav ul li{
+	list-style: none outside none;				
+	padding: 0 0 0 2px;
+	display: inline;
+    float: left;
+    position: relative;
+    z-index: 9998;
+    color: #FFFFFF;
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    padding: 9px 10px 8px;
+}
+
+ul li a:active, ul li a:link, ul li a:visited{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+ul li a:hover{
+	color: #FF0000;
+	text-decoration: underline;
+}

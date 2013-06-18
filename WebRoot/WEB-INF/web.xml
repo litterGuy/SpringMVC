@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name>SpringMVC</display-name>
+  
+  <!-- 配置spring配置文件加载的位置（application范围内的参数，存放在servletcontext中） -->
+  <context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:applicationContext.xml,
+			classpath:spring-datasource.xml
+		</param-value>
+  </context-param>
+  <listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+  <!-- POST中文乱码过滤器 -->
+  <filter>
+      <filter-name>CharacterEncodingFilter</filter-name>
+      <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+      <init-param>
+          <param-name>encoding</param-name>
+          <param-value>utf-8</param-value>
+      </init-param>
+  </filter>
+  <filter-mapping>
+      <filter-name>CharacterEncodingFilter</filter-name>
+      <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- 使用Spring MVC,配置DispatcherServlet（servlet范围内的参数，只能在servlet的init()方法中取得） -->
+  <servlet>
+       <servlet-name>spring</servlet-name>
+       <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+       <init-param>  
+	        <param-name>contextConfigLocation</param-name>  
+	        <param-value>classpath:spring-servlet.xml</param-value>  
+    	</init-param>
+       <load-on-startup>1</load-on-startup>
+   </servlet>
+   <servlet-mapping>
+       <servlet-name>spring</servlet-name>
+       <url-pattern>/</url-pattern>
+   </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>/views/index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

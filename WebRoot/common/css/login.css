@@ -1,0 +1,109 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, a, code, em, img, q, small, strong, dd, dl, dt, li, ol, ul, fieldset, form, label, table, tbody, tr, th, td, input,button {
+	margin: 0;
+	padding: 0;
+	font-family:'Microsoft YaHei', 'Hiragino Sans GB', STHeiti, SimHei, sans-serif;
+	font-size:14px;
+}
+a{color:#000;text-decoration:none;outline: none; cursor:pointer;}
+body{background:url(../images/background.png) repeat; height:100%;width: 100%;}
+.hide{display: none;}
+.show{display: block;}
+.left{float:left;}
+.right{float:right;}
+/* The media queries*/
+@media screen and (min-width: 781px) {
+	nav ul{margin:50px 90px 0 50px;}
+	header nav{width:100%;height:80px;}
+}
+@media screen and (max-width: 780px) {
+	nav ul{margin:50px 40px 10px 50px;}
+	header nav{width:100%;height:70px;}
+}
+@media screen and (max-width: 320px) {
+	body{width:135%;height:720px;}
+	nav ul{margin:50px 0 10px 5px;}
+	header nav{width:100%;height:50px;}
+}
+.header_line{ margin: 0 auto; width:95%;}
+nav ul{
+	float:right; height:20px; min-width:180px;
+}
+nav li{cursor:pointer; display: inline;list-style-type: none;height:17px; }
+nav ul li:first-child{background:url(../images/retrieve.png) no-repeat left;}
+nav ul li:last-child{background:url(../images/register.png) no-repeat left;}
+nav li a{
+	display:inline-block; padding:5px 25px;
+	color:#8d8d8d; font-size:12px; text-decoration:none; 
+}
+nav li a:hover{
+	color:#494949;
+}
+.header_line{
+	border-top:1px dashed #8d8d8d;border-bottom:1px dashed #ffffff;height:.3px;
+}
+.login_wrap{}
+#login_page{width: 400px;margin: 25px auto;}
+#login_page header{
+	height: 56px;margin: 65px 10px 0;position: relative;
+}
+#login_page section{width: 375px;margin: 25px 0 25px 10px;}
+
+.login_form span{height:32px;width:32px;float:left; margin-top:13px; margin-right:10px;}
+.login_form span:first-child{background:url(../images/username.png) no-repeat center;}
+.login_form span:nth-child(3){background:url(../images/password.png) no-repeat center;}
+#login_input{
+	background-image:url(../images/input_box.png);position: relative;width:330px; height:60px; float:left; margin-bottom:15px; opacity:0.7;
+}
+#login_input label {
+	width: 140px;height: 55px;line-height: 55px;color: #b3b3b3;font-size: 16px;left: 25px;overflow: hidden;
+	white-space: nowrap;z-index: 10; position:absolute; 
+}
+#login_input input {
+	width: 234px;margin: 16px 23px;height: 25px;line-height: 25px;border: 0;outline: none;position: absolute;font-size: 16px;color: #8f8f8f;
+	background:transparent url(../images/transparent.png) repeat;
+}
+#setCookie{
+	color:#8d8d8d;margin:0 0 10px 53px; width:322px; float:left;
+}
+#setCookie input{
+	-webkit-appearance:none;width:15px;height:15px;float:left;cursor:pointer;
+	background-color:white;border:1px solid #8d8d8d;border-radius:3px;box-shadow:inset 1px 1px 3px #8d8d8d;
+}
+#setCookie input:hover {
+	border:2px solid #8d8d8d;
+}
+#setCookie input:checked:after {
+	content:"\00a0";display:block;width:4px;height:8px;
+	border:solid #a5a5a5;position:relative;left:4px;
+	-webkit-transform:rotate(45deg);border-width:0 2px 2px 0;
+}
+#setCookie label{
+	float:left; width:250px;margin-left:5px;cursor:pointer;font-size: 12px;
+}
+#setCookie label:HOVER {
+	color: #767676; 
+}
+.login_tip{
+	margin:0 0 20px 50px; width:320px; float:left; font-size:12px; color:#8d8d8d;
+	background:url(../images/info.png) left top no-repeat; padding:2px 0 20px 25px;
+}
+.login_error{
+	background-color:#ffefb5; border:1px solid #ffefb5; border-radius:4px; 
+	margin:0 0 8px 48px; height:48px; width:320px; float:left; font-size:12px; color:#5b5a56;
+}
+.login_error img{float:left; width:18px; margin-left:8px;}
+.login_error div{
+	margin-left:17px; width: 260px;float:left;margin-top:16px; width:300px; 
+	background:url(../images/alert.png) no-repeat left; padding-left: 25px;
+}
+.login_form button{
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#525252), color-stop(100%,#282828)); 
+	background: -webkit-linear-gradient(top, #525252 0%,#282828 100%); 
+	cursor:pointer; border:#1c1c1c 1px solid;border-bottom:#010101 1px solid;border-radius:4px;
+	box-shadow:inset 0 1px 1px #bababa;margin:5px 0 10px 48px; height:48px; width:322px; float:left;
+	font-size:16px;color:#fff;
+}
+.login_form button:hover{
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#757575), color-stop(100%,#4c4c4c)); 
+	background: -webkit-linear-gradient(top, #757575 0%,#4c4c4c 100%); 
+}
