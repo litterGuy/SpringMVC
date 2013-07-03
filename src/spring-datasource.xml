@@ -35,11 +35,34 @@
 		p:maxIdleTime="25000"
 	/>
 	
+	<!-- 配置hibernate -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">  
+        <property name="dataSource" ref="dataSource" />  
+        <property name="packagesToScan">
+        	<list>  
+            	<value>com.cc.ordercount</value>
+            </list>  
+        </property>  
+        <property name="hibernateProperties">  
+            <props>  
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>  
+                <prop key="hibernate.show_sql">true</prop>  
+                <prop key="hibernate.hbm2ddl.auto">update</prop>  
+                <prop key="hibernate.format_sql">false</prop>  
+            </props>  
+        </property>  
+    </bean> 
+	
 	<!--声明一个事务管理器. -->
+	<!-- 
 	<bean id="transactionManager"
 	class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
 	p:dataSource-ref="dataSource" />
-	
+	-->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">  
+        <property name="sessionFactory" ref="sessionFactory"/>  
+    </bean>
+	 
 	<!-- 启用注释管理事务注释风格. -->
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	

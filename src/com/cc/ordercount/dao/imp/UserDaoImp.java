@@ -1,36 +1,27 @@
 package com.cc.ordercount.dao.imp;
 
-import java.util.List;
 
 import javax.annotation.Resource;
-import javax.sql.DataSource;
 
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import com.cc.ordercount.dao.UserDao;
 import com.cc.ordercount.model.UserModel;
 
 @Repository
-@SuppressWarnings("deprecation")
 public class UserDaoImp implements UserDao {
 
-	private SimpleJdbcTemplate jdbcTemplate;
-	
-	@Resource
-	public void setDataSource(DataSource dataSource) {
-		this.jdbcTemplate = new SimpleJdbcTemplate(dataSource);
-	}
-	
+	@Resource(name="sessionFactory")
+	private SessionFactory sessionFactory;
+
 	@Override
 	public UserModel getUserByLoginName(String loginName) {
-		String sql = "select * from user_tab where loginName = ?";
-		List<UserModel> list = jdbcTemplate.query(sql, 
-				new BeanPropertyRowMapper<UserModel>(UserModel.class),new Object[]{loginName});
-		if(list.size() == 0)
-			return null;
-		return list.get(0);
+		String sql = "from UserModel u where u.loginName = ?";
+		Query query = sessionFactory.getCurrentSession().createQuery(sql);
+		query.setString(0, loginName);
+		return (UserModel) query.uniqueResult();
 	}
 
 }
