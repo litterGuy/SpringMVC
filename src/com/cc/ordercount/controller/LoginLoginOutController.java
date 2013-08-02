@@ -15,13 +15,14 @@ import com.cc.ordercount.service.imp.UserServiceImp;
 @RequestMapping(value="/account")
 public class LoginLoginOutController {
 
-	private Logger logger = Logger.getLogger(LoginLoginOutController.class);
+	private Logger log = Logger.getLogger(LoginLoginOutController.class);
+	
 	@Autowired
 	private UserServiceImp userService;
 	
 	@RequestMapping(value="/triggerLogin")
 	public String triggerLogin(){
-		logger.info("TODO:valid the user is or not logined!");
+		//TODO:valid the user is or not logined!
 		return "login";
 	}
 	/**
@@ -35,8 +36,16 @@ public class LoginLoginOutController {
 	public String login(@RequestBody UserModel user){
 		String loginName = user.getLoginName();
 		String passWord = user.getPassWord();
-		logger.info("trigger this part and print the message!");
 		String msg = userService.getUserByLoginName(loginName, passWord);
 		return msg;
+	}
+	/**
+	 * 退出
+	 * @return
+	 */
+	@RequestMapping(value="loginOut")
+	public String loginOut(){
+		//TODO:也许应该记录用户登录退出的时间
+		return "index";
 	}
 }

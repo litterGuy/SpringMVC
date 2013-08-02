@@ -7,7 +7,7 @@
 	<div class="locate_div">
 		<ul>
 			<li>
-				<a href="#">首页</a>
+				<a href="${ctx }/views/index.jsp">首页</a>
 			</li>
 			<li>
 				<a href="#">聚焦</a>
@@ -16,13 +16,13 @@
 				<a href="#">人气</a>
 			</li>
 			<li>
-				<a href="#">我的</a>
+				<a href="${ctx}/ordercount/welcome">我的</a>
 			</li>
 			<li>
 				<a href="#">RSS</a>
 			</li>
 			<li style="float:right;">
-				<a href="#">注册</a>
+				<a href="${ctx }/views/register.jsp">注册</a>
 			</li>
 			<li style="float:right;">
 				<a href="${ctx }/account/triggerLogin">登录</a>

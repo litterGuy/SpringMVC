@@ -14,6 +14,9 @@
 		<script src="${sctx}/common/js/jquery.cookie.min.js"></script>
     </head>
 	<body>
+		<!-- 头部固定导航栏 -->
+  		<jsp:include page="header.jsp"></jsp:include>
+	
 		<div class="login_wrap">
 	        <header>
 	        <nav>
@@ -97,8 +100,10 @@
 						if(cookieChecked){
 							//$.cookie('cookie_name', 'cookie_value', { expires: 2, path: '/', domain: 'yourwebsite.com', secure: true });
 							$.cookie("ud", result.userID,{expires:30,path:'/'});
+							$.cookie("uname",result.userName,{expires:30,path:'/'});
 						}else{
 							$.cookie("ud", result.userID,{expires:null,path:'/'});
+							$.cookie("uname", result.userName,{expires:null,path:'/'});
 						}
 						//公共机房
 						localStorage.clear();
@@ -117,5 +122,10 @@
 			}
 			return false;
 		});
+		//隐藏部分信息
+		$(function(){
+	  		$(".locate_div ul li:last").prev().hide();
+	  		$(".locate_div ul li:last").hide();
+  		});
 	</script>
 </html>

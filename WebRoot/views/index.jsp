@@ -13,7 +13,7 @@
 	<script type="text/javascript" src="${sctx }/common/js/jquery.js"></script>
 	<script type="text/javascript" src="${sctx }/common/js/cufon-yui.js"></script>
 	<script type="text/javascript" src="${sctx }/common/js/Harabara_700.js"></script>
-
+	<script src="${sctx}/common/js/jquery.cookie.min.js"></script>
 	<!-- Cufon font replacement -->
 	<script type="text/javascript">
 	    Cufon.replace('ul#navigation li a', { textShadow: '0 2px rgba(0, 0, 0, 0.2)' });
@@ -195,4 +195,13 @@
 	    
 	</div>
   </body>
+  <script type="text/javascript">
+  	$(function(){
+  		var ud = $.cookie("ud");
+  		if(ud != null){
+  			$(".locate_div ul li:last").prev().hide();
+	  		$(".locate_div ul li:last").hide();
+  		}
+  	});
+  </script>
 </html>

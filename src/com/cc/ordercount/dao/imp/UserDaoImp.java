@@ -12,7 +12,7 @@ import com.cc.ordercount.model.UserModel;
 
 @Repository
 public class UserDaoImp implements UserDao {
-
+	
 	@Resource(name="sessionFactory")
 	private SessionFactory sessionFactory;
 

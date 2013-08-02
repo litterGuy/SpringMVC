@@ -1,3 +1,7 @@
+--创建数据库
+creaet database ordercount;
+
+
 CREATE TABLE `user_tab` (
   `userID` int(11) NOT NULL AUTO_INCREMENT,
   `loginName` varchar(100) NOT NULL,

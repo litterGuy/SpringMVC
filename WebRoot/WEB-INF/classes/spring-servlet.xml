@@ -10,8 +10,6 @@
 	        http://www.springframework.org/schema/context/spring-context-3.1.xsd
 	        http://www.springframework.org/schema/mvc 
 			http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
-	<!-- 配置要扫描的包 -->
-	<context:component-scan base-package="com.cc.ordercount.*"/> 
 
 	<!-- 采用注释的方式配置bean（通过注解，把一个URL映射到Controller类上） -->
     <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
@@ -43,7 +41,7 @@
 	<!-- 拦截器 -->  
     <mvc:interceptors>  
         <mvc:interceptor>
-	        <mvc:mapping path="/ordercount"/>
+	        <mvc:mapping path="/ordercount/*"/>
 	        <bean class="com.cc.ordercount.util.TokenInterceptor" />
 	    </mvc:interceptor>  
     </mvc:interceptors>
@@ -52,6 +50,9 @@
         <bean class="com.cc.ordercount.util.TokenInterceptor" />  
     </mvc:interceptors>
      -->
+	
+	<!-- 配置要扫描的包 -->
+	<context:component-scan base-package="com.cc.ordercount.*"/> 
 	
 	<!-- 配置静态资源 -->
     <mvc:default-servlet-handler/>

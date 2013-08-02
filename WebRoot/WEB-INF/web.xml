@@ -47,7 +47,7 @@
        <url-pattern>/</url-pattern>
    </servlet-mapping>
   
-  <!-- 配置hibernate的sessionFactory -->
+  <!-- 配置hibernate的sessionFactory Spring的OpenSessionInView实现-->
 	<filter>
 		<filter-name>openSessionInView</filter-name>
 		<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
@@ -56,7 +56,16 @@
 		<filter-name>openSessionInView</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-  
+   
+   <!-- log4j 配置信息-->
+    <context-param>  
+        <param-name>log4jConfigLocation</param-name>  
+        <param-value>classpath:log4j.properties</param-value>  
+    </context-param>
+    <listener>  
+        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>  
+    </listener>
+   
   <welcome-file-list>
     <welcome-file>/views/index.jsp</welcome-file>
   </welcome-file-list>

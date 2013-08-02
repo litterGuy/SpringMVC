@@ -17,7 +17,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	font-weight: inherit;
 	font-style: inherit;
 	font-size: 100%;
-	font-family: inherit;
+	font-family:'Microsoft YaHei', 'Hiragino Sans GB', STHeiti, SimHei, sans-serif;
 	vertical-align: baseline;
 }
 /* remember to define focus styles! */

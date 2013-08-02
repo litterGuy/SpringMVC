@@ -12,7 +12,7 @@ public class UserInforController {
 	
 	@RequestMapping(value="/welcome")
 	public String aftLogin(){
-		logger.info("just do this for temp");
+		logger.error("the first page after logining just do this for temp");
 		return "welcome";
 	}
 }
